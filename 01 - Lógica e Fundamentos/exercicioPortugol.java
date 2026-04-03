@@ -3,6 +3,30 @@ import java.lang.Thread;
 import java.util.Scanner;
 
 public class exercicioPortugol {
+
+    /* Nesse exercicio, o meu objetivo era criar um programa que simule o processamento de um pedido em uma loja online. Tendo como base essa lista:
+    1. Ler quantidade de produtos e preço unitário de um item.
+    2. Calcular o valor total do pedido.
+    3. Aplicar descontos de acordo com o valor total:
+        o Total maior ou igual a R$500 → desconto de 15%
+        o Total entre 200 e 499,99 → desconto de 10%
+        o Total menor que 200 → sem desconto
+    4. Verificar o tipo de entrega:
+        o "Expressa" → adicionar R$50 ao total
+        o "Normal" → adicionar R$20 ao total
+        o "Retirada na loja" → sem custo adicional
+    5. Mostrar:
+        o Valor original do pedido
+        o Valor do desconto (se houver)
+        o Valor da entrega
+        o Valor final a pagar
+        
+    Fiz isso usando o Scanner para processor os valores digitados no teclado e armazenei os valores em variáveis de tipo double, criei laços de repetição 
+    para caso o usuario digitalar valores inválidos e utilizei as condicionais if e else para fazer os desconto baseando no valor total da compra
+    
+    Por fim, eu mostrei o resultado com println.
+    */
+
     public static void limparTela() {
         try {
             if (System.getProperty("os.name").contains("Windows")) {

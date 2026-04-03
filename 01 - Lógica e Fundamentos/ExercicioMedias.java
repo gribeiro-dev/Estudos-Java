@@ -5,6 +5,12 @@ import java.util.Scanner;
 public class ExercicioMedias {
     public static void main(String[] args) {
 
+        /* Nesse exercicio, o meu objetivo era fazer um calculo simples de 4 notas escolares e determinar a media das notas, além disso, 
+        se o aluno reprovar na primeira média escolar, ele refaz uma prova de recuperação e essa (nota+médiaAnterior) resulta em aprovação ou Reprovado
+        Fiz isso usando as variáveis float e boolean para armazenar os valores e utilizei condicionais para fazer as condições para aprovação ou reprovação do aluno
+        Por fim, mostrei o resultado com printf.
+        */
+
         Scanner leitor = new Scanner(System.in);
 
         float n1 = leitor.nextFloat(), n2 = leitor.nextFloat(), n3 = leitor.nextFloat(), n4 = leitor.nextFloat();

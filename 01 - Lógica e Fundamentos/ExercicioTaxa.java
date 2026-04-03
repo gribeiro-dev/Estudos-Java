@@ -3,13 +3,15 @@
 public class ExercicioTaxa {
     public static void main(String[] args) throws InterruptedException {
 
-        /* Olá gustavo, vamos começar um exercicio agora ein!
-        Neste exercicio, você deve determinar quanto de taxa uma pessoa paga baseado nessa tabela abaixo
+        /* Neste exercicio, meu objetivo é criar um programa que calcule quanto de taxa uma pessoa paga baseado nessa tabela abaixo
         From | Up to and including | Rate
         € 0     | € 34,712 | 9.70%
         € 34,713 | € 68,507 | 37.35%
         € 68,508 | — | 49.50%
-
+        
+        Fiz isso utilizando váriaveis com valores fixos, e utilizei condicionais com operadores lógicos e relacionais 
+        para fazer diferentes caminhos no codigo baseado no salario que a pessoa ganha
+        
         O from é salario base e o up to é o maximo que pode chegar para pagar até 9.70 por exemplo */
 
         double salario = 70000;

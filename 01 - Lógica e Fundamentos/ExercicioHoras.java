@@ -1,6 +1,12 @@
 
 public class ExercicioHoras {
     public static void main(String[] args) throws InterruptedException {
+
+        /* Nesse exercicio, o meu objetivo era calcular um valor de horas e minutos e dizer se era de (Madrugada, manhã, tarde ou noite).
+        Fiz isso usando as variavéis [horas e minutos] para determinar os principais valores e utilizei as condicionais if e else para dizer o periodo do dia
+        No fim, eu mostrei o resultado com println.
+        */
+
         int hora = 12;
         int minuto = 30;
         int calculoEmMinuto;

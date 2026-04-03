@@ -1,9 +1,9 @@
-package exercicioDiferente;
-
-public class Aula03TiposPrimitivosExercicio {
+public class ExercicioTiposPrimitivos {
     public static void main (String[] args) {
 
-        /* Crie váriaveis para os campos descritos abaixo com <> e imprima-os
+        /* 
+        Nesse exercicio, o meu objetivo era criar variaveis com o tipo de dado correto e atribuir valores fixos a eles
+        Fiz isso usando as variáveis e seus tipos primitivos, no final, mostrei o resultado com println
 
         Eu sou <nome>, morando no endereço <endereço>,
         confirmo que recebi o salário de <salário>, na data <data> */

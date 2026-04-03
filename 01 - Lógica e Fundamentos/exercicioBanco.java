@@ -1,10 +1,15 @@
-package exercicioDiferente;
 import java.util.Scanner;
 
 public class exercicioBanco {
     public static void main(String[] args) throws InterruptedException {
+
+        /* Nesse exercicio, o meu objetivo era fazer um sistema de banco bem simples.
+        Fiz isso usando o scanner para a entrada de dados, atribuindo a variáveis nome e senha, e comparando as mesma com condiconais if e else
+        No fim, mostrei o resultado com println.
+        */
+
         String nomeCorreto = "Gustavo";
-        String senhaCorreta = "euamoabea";
+        String senhaCorreta = "123";
         String nomeDaConta;
         String senhaDaConta;
 
@@ -34,5 +39,8 @@ public class exercicioBanco {
         } else {
             System.out.println(">> O usuário ou senha estão inválidos, tente novamente mais tarde.");
         }
+
+        leitor.close();
+
     }
 }

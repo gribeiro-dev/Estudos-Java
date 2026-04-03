@@ -1,8 +1,20 @@
 
 import java.util.Scanner;
 
-public class exercicioMatrix3x3 {
+public class ExercicioMatrix3x3 {
     public static void main(String[] args) {
+
+        /* Nesse exercicio, o meu objetivo foi criar uma matriz 3x3 onde o próprio usuário insere os valores para cada posição. 
+        * Além de armazenar os dados, durante esse processo, ele consegue determeinar se esse numero é par ou impar a cada vez que o
+        loop é rodado.
+        Como eu estruturei a lógica:
+        - Criei uma matriz bidimensional 'int[3][3]' e variáveis contadoras para pares e ímpares;
+        - Usei laços 'for' aninhados para percorrer cada posição [i][j] da matriz;
+        - Dentro do laço de leitura, utilizei o operador de resto para dizer (se o resto da divisão por 2 é zero) 
+        então ele é par, caso contrario, ele é impar. Dessa forma, eu consigo atualizar os contadores de par e impar
+        - Por fim, utilizei outro laço para exibir a matriz formatada no terminal e mostrei quantos pares e impares 
+        existem na matriz, com o valor da variavel [numerosPar] e [numerosImpares]
+        */
         
         Scanner leitor = new Scanner(System.in);
 

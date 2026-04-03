@@ -1,9 +1,14 @@
-package exercicioDiferente;
-
 import java.util.Scanner;
 
 public class ExercicioCantina {
     public static void main(String[] args) {
+
+        /* Nesse exercicio, o meu objetivo era criar um algoritmo simples que recebe a quantidade que o usuario deseja, de algum lanche do exemplo
+        Fiz isso usando as variáveis da cantina como base, e utilizei o switch como uma estrutura de condicao, onde pode mudar o caminho do 
+        codigo caso algo acontecer, sendo mais limpo que if e else
+        Por fim, fiz o calculo da quantidade * lanche escolhido, e mostrei o resultado com printf.
+        */
+
         Scanner leitor = new Scanner(System.in);
 
         double cachorroQuente = 4.00;
@@ -37,7 +42,7 @@ public class ExercicioCantina {
 
         System.out.printf("Total: R$ %.2f%n", ( valor1 * quantidade));
 
-
+        leitor.close();
 
 
     }

@@ -1,7 +1,20 @@
 import java.util.Scanner;
 
-public class exercicioFilhos {
+public class ExercicioFilhos {
     public static void main(String[] args) {
+
+        /* Nesse exercicio, o meu objetivo era treinar arrays irregulares, com isso em mente, eu criei um sistema que pergunta ao usuario 
+        quantos filhos ele possui, e pergunta o nome de cada um deles, por fim, ele cria uma posição em um array para cada filho com o seu nome
+        
+        Para isso, eu defini o número de linhas (entrevistados) com base na entrada do usuário;
+        Após saber quantas pessoas serão no total, eu criei um laço que pergunta quantos filhos a pessoa tem e só então crio um 
+        array de tamanho[entrevistados][qtdFilhos]
+        
+        Depois, utilizei laços para perguntar o nome de cada filhos e armazenar a resposta em uma posição no array
+        
+        Por fim, eu usei um for para percorrer a matriz e mostrei um relatório que diz o nome dos filhos da (primeira, segunda...) pessoa entrevistada
+        
+        */
         
         Scanner leitor = new Scanner(System.in);
 

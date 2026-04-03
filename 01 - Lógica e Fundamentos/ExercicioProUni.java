@@ -3,6 +3,13 @@
 public class ExercicioProUni {
     public static void main(String[] args) {
 
+        /* Nesse exercício, o objetivo foi aplicar operadores lógicos e relacionais para validar critérios do ProUni.
+        Fiz isso usando variáveis booleanas cada regra (Nota, Redação, Treineiro e Renda) 
+        e utilizei operadores lógicos para validar todos os valores com os critérios
+        Por fim, eu mostrei o resultado é exibido pelo println.
+        */
+    
+
         int participacaoDoEnem26 = 1;
         int mediaGeralDaProva = 500;
         int notaSuperiorAZeroNaRedação = 100;

@@ -1,13 +1,12 @@
 
 import java.util.Scanner;
 
-public class exercicioFederal {
+public class ExercicioFederal {
     public static void main(String[] args) {
-        /* Crie um programa que permita armazenar o nome, peso, altura e da data de
-        nascimento de até 50 pessoas. Cada pessoa deve ser representada por uma estrutura
-        dentro de um array. A data de nascimento também deve ser uma estrutura. O seu
-        programa deve ser capaz de ler todos os dados das 50 pessoas e mostra-las. */
-
+        /* Nesse exercicio, o meu objetivo era criar um simples array e percorrer por ele com os laços de repetição for.
+        Fiz isso usando a sintaxe padrão do java pra criar array e os laços
+        No fim, eu mostrei o resultado com println. */
+        
         Scanner leitor = new Scanner(System.in);
 
         int[] notaDosAlunos = new int[11];

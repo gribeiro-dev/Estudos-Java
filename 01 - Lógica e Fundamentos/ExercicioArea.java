@@ -1,7 +1,12 @@
-package exercicioDiferente;
 import java.util.Scanner;
+
 public class ExercicioArea {
     public static void main(String[] args) {
+
+        /*
+        Nesse exercicio, o meu objetivo era mostrar diferentes formulas geometricas com
+        valores que o usuario atribuiu para a, b e c */
+
         Scanner leitor = new Scanner(System.in);
 
         double a = leitor.nextDouble(), b = leitor.nextDouble(), c = leitor.nextDouble();
@@ -17,6 +22,8 @@ public class ExercicioArea {
         System.out.printf("TRAPEZIO: %.3f%n", trapezio);
         System.out.printf("QUADRADO: %.3f%n", quadrado);
         System.out.printf("RETANGULO: %.3f%n", retangulo);
+
+        leitor.close();
 
 
     }

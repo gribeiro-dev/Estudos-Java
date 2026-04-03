@@ -1,8 +1,27 @@
 
 import java.util.Scanner;
 
-public class exercicioAgendaPessoal {
+public class ExercicioAgendaPessoal {
     public static void main(String[] args) {
+
+        /* Neste exercicio, o meu objetivo era criar um sistema de agenda funcional utilizando Matrizes.
+        Para isso, usei uma estrutura bidimensional String[31][24], onde as linhas representam os dias do mês 
+        e as colunas representam as 24 horas do dia.
+        
+        Fiz isso utilizando:
+        
+        * - Usei uma Matriz String[31][24] para simular um calendário de um mês inteiro (31 dias) 
+        * onde cada dia tem suas 24 janelas de horários disponíveis.
+        * 
+        * - Implementei um Menu Interativo para eu poder escolher entre marcar um compromisso 
+        * ou consultar o que eu tenho para fazer em determinado horário.
+        * 
+        * - Adicionei validações (while e if) para garantir que eu não digite um dia ou hora 
+        * que não existe, evitando erros no sistema.
+        * 
+        * * No final, este código me ajudou a entender como os dados são guardados e recuperados 
+        * em "tabelas" dentro da memória do computador.
+        */
         
         Scanner leitor = new Scanner(System.in);
 
@@ -40,14 +59,14 @@ public class exercicioAgendaPessoal {
                             horaValida = true;
                             System.out.print("-> Digite o seu compromisso: ");
                             agenda[escolhaMês - 1][escolhaHora] = leitor.next();
-                            break; // Sai do while da hora
+                            break;
                         } else {
                             System.out.println("Hora inválida, tente novamente.");
                         }
                     }
                     System.out.print("> Voltar ao menu? (S/N): ");
                     menu = leitor.next();
-                    break; // SAÍDA DO CASE 1
+                    break;
 
                 case 2:
                     diaValido = false;
@@ -72,20 +91,20 @@ public class exercicioAgendaPessoal {
                             } else {
                                 System.out.println("Compromisso: " + agenda[escolhaMês - 1][escolhaHora]);
                             }
-                            break; // Sai do while da hora
+                            break;
                         } else {
                             System.out.println("Hora inválida!");
                         }
                     }
                     System.out.print("> Voltar ao menu? (S/N): ");
                     menu = leitor.next();
-                    break; // SAÍDA DO CASE 2
+                    break;
                 
                 default:
                     System.out.println("Opção inválida!");
                     break;
-            } // FIM DO SWITCH
-        } // FIM DO WHILE
+            }
+        }
         
         System.out.println("Sistema encerrado.");
         leitor.close();
