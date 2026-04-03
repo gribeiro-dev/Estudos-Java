@@ -2,7 +2,7 @@
 import java.lang.Thread;
 import java.util.Scanner;
 
-public class exercicioPortugol {
+public class exercicioLojaOnline {
 
     /* Nesse exercicio, o meu objetivo era criar um programa que simule o processamento de um pedido em uma loja online. Tendo como base essa lista:
     1. Ler quantidade de produtos e preço unitário de um item.
