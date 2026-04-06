@@ -37,9 +37,9 @@ public class ExercicioMatrix4x4 {
                 if (maiorValor < array[i][j]) {
                     maiorValor = array[i][j];
 
-                    linhaDoMaior = i;
+                    linhaDoMaior = i+1;
 
-                    colunaDoMaior = j;
+                    colunaDoMaior = j+1;
                 }
             }
         }
