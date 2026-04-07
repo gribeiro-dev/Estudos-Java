@@ -105,7 +105,7 @@ public class exercicioJogoDaVelha {
                     } else {
                         oQueMostrar = jogaDaVelha[i][j]; // Se tiver X ou O, mostramos o sinal
                     }
-                    System.out.print( oQueMostrar + " | ");
+                    System.out.print( oQueMostrar + "  |");
                 }
                 System.out.println(i+1);
             }
