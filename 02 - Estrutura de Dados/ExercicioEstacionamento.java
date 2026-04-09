@@ -8,8 +8,8 @@ public class ExercicioEstacionamento {
 
     public static final int LISTAR_VAGAS = 3;
 
-    public static final int PAGAMENTO = 4;
-    public static void main(String[] args) {
+    public static final int SAIDA = 4;
+    public static void main(String[] args) throws InterruptedException {
 
         Scanner leitor = new Scanner(System.in);
 
@@ -23,11 +23,33 @@ public class ExercicioEstacionamento {
 
         String placaDoCarro = "";
 
+        int horarioDeEntrada = 0;
+
+        int horarioDeSaida = 0;
+
+        int valorDaHora = 5;
+
+        int calculoDeHoras = 0;
+
+        String pagamentoPelaVaga = "";
+
         boolean linhaValida = false;
 
         boolean colunaValida = false;
 
         boolean placaValida = false;
+
+        boolean oUsuarioPagouOEstacionamento = false;
+
+        boolean horarioEntradaValida = false;
+
+        boolean horarioSaidaValida = false;
+
+        boolean aVagaFoiLiberada = false;
+
+        boolean aPlacaFoiEncontradaNoEstacionamento = false;
+
+        String opcaoDePlaca = "";
 
         String[][] listaDoEstacionamento = new String[3][5];
 
@@ -49,7 +71,7 @@ public class ExercicioEstacionamento {
 
                     while (!linhaValida) {
 
-                        System.out.print("\n>> Digite a linha que deseja estacionar: ");
+                        System.out.print(">> Digite a linha que deseja estacionar: ");
     
                         escolhaDeLinha = leitor.nextInt();
 
@@ -63,7 +85,7 @@ public class ExercicioEstacionamento {
 
                     while (!colunaValida) {
 
-                        System.out.print("\n>> Digite a coluna ( [] ) que deseja estacionar: ");
+                        System.out.print("\n>> Digite a coluna ([]) que deseja estacionar: ");
 
                         escolhaDeColuna = leitor.nextInt();
 
@@ -100,9 +122,9 @@ public class ExercicioEstacionamento {
                         
                         System.out.println();
 
-                        System.out.println("\n>> O seu veiculo foi estacionado na vaga " + "[" + escolhaDeLinha + ", " + escolhaDeColuna + "]" + ".");
-                        
-                        System.out.println();
+                        Thread.sleep(100);
+
+                        mostrarAMatrizEstacionamento(listaDoEstacionamento);
 
                         linhaValida = false;
 
@@ -110,16 +132,127 @@ public class ExercicioEstacionamento {
 
                         placaValida = false;
 
-                        mostrarAMatrizEstacionamento(listaDoEstacionamento);
+                        Thread.sleep(200);
+
+                        System.out.println(">> O seu veiculo foi estacionado na vaga " + "[" + escolhaDeLinha + ", " + escolhaDeColuna + "]" + ".");
+                        
+                        System.out.println();
 
                     } else {
                         System.out.println(">> Essa linha e coluna já está ocupada por um outro veiculo. ");
                     }
 
-            }
+                    break;
 
-        }
-    }
+                case SAIR_DA_VAGA:  
+
+                
+                mostrarAMatrizEstacionamento(listaDoEstacionamento);
+
+                while (!aVagaFoiLiberada) {
+                    aPlacaFoiEncontradaNoEstacionamento = false;
+                    System.out.print(">> Digite a placa do seu carro: ");
+                    opcaoDePlaca = leitor.next();
+
+                    for (int i = 0; i < placasDosCarrosEstacionados.length; i++) {
+                        for (int j = 0; j < placasDosCarrosEstacionados[i].length; j++) {
+                            if (placasDosCarrosEstacionados[i][j] != null
+                                    && placasDosCarrosEstacionados[i][j].equals(opcaoDePlaca)) {
+
+                                aPlacaFoiEncontradaNoEstacionamento = true;
+
+                                System.out.print("\n>> O carro com a placa " + opcaoDePlaca
+                                        + " está estacionado na vaga " + "[" + (i + 1) + ", " + (j + 1) + "].");
+
+                                while (!horarioEntradaValida) {
+                                    System.out.println();
+
+                                    System.out.print("\n>> Horario de entrada: ");
+
+                                    horarioDeEntrada = leitor.nextInt();
+                                    if (verificadorDeHoraDeEntrada(horarioDeEntrada)) {
+                                        horarioEntradaValida = true;
+                                    } else {
+                                        System.out.print("\n>> Esse horario está inválido, tente novamente.");
+                                    }
+                                }
+
+                                while (!horarioSaidaValida) {
+                                    System.out.print("\n>> Horario de saida: ");
+
+                                    horarioDeSaida = leitor.nextInt();
+
+                                    if (verificadorDeHoraDeSaida(horarioDeSaida, horarioDeEntrada)) {
+                                        horarioSaidaValida = true;
+                                    } else {
+                                        System.out.print("\n>> Esse horario está inválido, tente novamente.");
+                                    }
+                                }
+
+                                calculoDeHoras = horarioDeSaida - horarioDeEntrada;
+
+                                System.out.print("\n>> O valor do estacionamento ficou de: R$ "
+                                        + calculoDeHoras * valorDaHora + ".");
+
+                                while (!oUsuarioPagouOEstacionamento) {
+                                    System.out.println();
+
+                                    System.out.print(
+                                            "\n>> O valor foi pago para o pix do estacionamento? (Este processo é feito presencialmente, digite S ou N): ");
+
+                                    pagamentoPelaVaga = leitor.next();
+
+                                    if (pagamentoPelaVaga.equalsIgnoreCase("S")) {
+
+                                        System.out.println(">> Pagamento aprovado, retirando o carro da vaga...");
+
+                                        retirarVeiculoDoEstacionamento(listaDoEstacionamento,
+                                                placasDosCarrosEstacionados, opcaoDePlaca);
+
+                                        Thread.sleep(4000);
+
+                                        System.out.println(">> Vaga liberada com sucesso.");
+
+                                        horarioEntradaValida = false;
+                                        horarioSaidaValida = false;
+                                        oUsuarioPagouOEstacionamento = true;
+                                        aVagaFoiLiberada = true;
+
+                                        System.out.println();
+                                    } else {
+                                        System.out.println("Para sair da vaga, é preciso fazer o pagamento.");
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if (!aPlacaFoiEncontradaNoEstacionamento) {
+                        System.out.println(">> Essa placa não existe no sistema, tente novamente.");
+                    }
+                }
+                
+                aVagaFoiLiberada = false;
+
+                oUsuarioPagouOEstacionamento = false;
+
+                break;
+
+                case LISTAR_VAGAS:
+
+                    mostrarAMatrizEstacionamento(listaDoEstacionamento);
+
+                    break;
+
+                case SAIDA:
+                    System.out.println("Nos vemos outra hora então, até a proxima! :)");
+                    oUsuarioSaiuDoSistema = true;
+
+                    break;
+                
+                }
+                }
+            }
     
     public static void exibirMenu() {
         System.out.println("---------------------------------------------------");
@@ -129,8 +262,7 @@ public class ExercicioEstacionamento {
         System.out.println(">> (1) - Estacionar um carro/moto em uma vaga. ");
         System.out.println(">> (2) - Saida de veiculo de uma vaga ");
         System.out.println(">> (3) - Mostrar as vagas atuais no estacionamento ");
-        System.out.println(">> (4) - Pagamento da vaga estacionada ");
-        System.out.println(">> (5) - Sair do sistema ");
+        System.out.println(">> (4) - Sair do sistema ");
         System.out.println("---------------------------------------------------");
 
         System.out.print(">> Escolha uma das opções (1-5): ");
@@ -144,18 +276,28 @@ public class ExercicioEstacionamento {
         }
     }
 
-    public static void mostrarAMatrizEstacionamento(String[][] listaDoEstacionamento) {
+    public static void mostrarAMatrizEstacionamento(String[][] listaDoEstacionamento) throws InterruptedException {
+        Thread.sleep(110);
         System.out.println();
         System.out.println(" 1     2     3     4     5");
+        Thread.sleep(110);
         System.out.println("-----------------------------");
+        Thread.sleep(110);
         for (int i = 0; i < listaDoEstacionamento.length; i++) {
             for (int j = 0; j < listaDoEstacionamento[i].length; j++) {
+                Thread.sleep(80);
                 System.out.print(listaDoEstacionamento[i][j] + " | ");
+                Thread.sleep(10);
             }
+            Thread.sleep(90);
             System.out.println(i + 1);
         }
+
+        Thread.sleep(110);
         System.out.println("-----------------------------");
+        Thread.sleep(110);
         System.out.println("Status: [ ] Livre [X] Ocupado");
+        Thread.sleep(110);
         System.out.println("-----------------------------");
         System.out.println();
     }
@@ -170,7 +312,7 @@ public class ExercicioEstacionamento {
 
     public static boolean verificadorDeOcupacao(int escolhaDeLinha, int escolhaDeColuna, String[][] listaDoEstacionamento) {
         
-        if (listaDoEstacionamento[escolhaDeLinha - 1][escolhaDeColuna - 1] == "[ ]") {
+        if (listaDoEstacionamento[escolhaDeLinha - 1][escolhaDeColuna - 1].equals("[ ]")) {
             return true;
         } else {
             return false;
@@ -209,4 +351,26 @@ public class ExercicioEstacionamento {
 
     }
 
-}
+    public static boolean verificadorDeHoraDeEntrada(int horarioDeEntrada) {
+        return horarioDeEntrada > 0 && horarioDeEntrada < 24;
+    }
+
+    public static boolean verificadorDeHoraDeSaida(int horarioDeSaida, int horarioDeEntrada) {
+        return horarioDeSaida > horarioDeEntrada && horarioDeSaida < 24;
+    }
+
+    public static void retirarVeiculoDoEstacionamento(String[][] listaDoEstacionamento, String[][] placaDosCarrosEstacionados, String opcaoDePlaca) {
+        
+        for (int i = 0; i < placaDosCarrosEstacionados.length; i++) {
+            for (int j = 0; j < placaDosCarrosEstacionados[i].length; j++) {
+
+                if (placaDosCarrosEstacionados[i][j] != null && placaDosCarrosEstacionados[i][j].equals(opcaoDePlaca)) {
+                    listaDoEstacionamento[i][j] = "[ ]";
+                    placaDosCarrosEstacionados[i][j] = null;
+                }
+                
+            }
+        }
+
+    }
+}       
