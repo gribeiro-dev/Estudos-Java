@@ -19,7 +19,12 @@ O projeto está organizado por módulos para facilitar a navegação e o estudo 
 
 - **01 - Lógica e Fundamentos:** Exercícios iniciais focados em sintaxe, operadores, condicionais e laços de repetição (ex: Cálculo de área, Bhaskara, Loja Online).
 
-- **02 - Estrutura de Dados:** Implementações que exigem organização de dados, como arrays (vetores), matrizes e manipulação de listas.
+- **02 - Estrutura de Dados:** Implementações que exigem organização de dados, como arrays (vetores), matrizes e manipulação de listas, exemplos de exercicios presente:
+- **🎮 Jogo da Velha** — tabuleiro 3x3 com dois jogadores
+- **🏴‍☠️ Caça ao Tesouro** — encontre o tesouro em 5 tentativas
+- **🎬 Cinema (Senai)** — reserva de assentos em sala 10x10
+- **📅 Agenda Pessoal** — compromissos por dia e hora
+- **🚗 Estacionamento** — controle de vagas com pagamento
 
 ## 🚀 Como executar os exercícios
 
