@@ -1,3 +1,5 @@
+package estrutura_dados;
+
 import java.util.Random;
 
 public class ExercicioMatrix10x10 {

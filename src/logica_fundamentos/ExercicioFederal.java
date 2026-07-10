@@ -1,3 +1,4 @@
+package logica_fundamentos;
 
 public class ExercicioFederal {
     public static void main(String[] args) {

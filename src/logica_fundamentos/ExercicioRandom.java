@@ -1,3 +1,4 @@
+package logica_fundamentos;
 
 import java.util.Random;
 import java.util.Scanner;

@@ -1,7 +1,8 @@
+package estrutura_dados;
 
 import java.util.Scanner;
 
-public class ExercicioFederal {
+public class ExercicioFederalAlunos {
     public static void main(String[] args) {
         /* Nesse exercicio, o meu objetivo era criar um simples array e percorrer por ele com os laços de repetição for.
         Fiz isso usando a sintaxe padrão do java pra criar array e os laços

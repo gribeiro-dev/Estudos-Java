@@ -1,4 +1,4 @@
-
+package logica_fundamentos;
 
 public class ExercicioTaxa {
     public static void main(String[] args) throws InterruptedException {

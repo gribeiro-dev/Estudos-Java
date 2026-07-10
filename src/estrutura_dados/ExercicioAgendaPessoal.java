@@ -1,3 +1,4 @@
+package estrutura_dados;
 
 import java.util.Scanner;
 

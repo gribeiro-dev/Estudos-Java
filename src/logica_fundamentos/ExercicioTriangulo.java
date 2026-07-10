@@ -1,4 +1,4 @@
-
+package logica_fundamentos;
 
 import java.util.Scanner;
 

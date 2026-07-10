@@ -1,6 +1,8 @@
+package logica_fundamentos;
 
 import java.io.IOException;
 import java.util.Scanner;
+
 public class ExercicioIdadeDias {
     public static void main(String[] args) throws IOException {
         /* Nesse exercicio, o meu objetivo era calcular um valor de idade e dizer quantos (anos, meses e dias) esse idade corresponde.

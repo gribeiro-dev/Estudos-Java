@@ -1,3 +1,5 @@
+package estrutura_dados;
+
 import java.util.Scanner;
 
 public class ExercicioEstacionamento {
@@ -9,6 +11,7 @@ public class ExercicioEstacionamento {
     public static final int LISTAR_VAGAS = 3;
 
     public static final int SAIDA = 4;
+
     public static void main(String[] args) throws InterruptedException {
 
         Scanner leitor = new Scanner(System.in);

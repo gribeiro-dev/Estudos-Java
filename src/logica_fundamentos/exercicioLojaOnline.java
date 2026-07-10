@@ -1,3 +1,4 @@
+package logica_fundamentos;
 
 import java.lang.Thread;
 import java.util.Scanner;

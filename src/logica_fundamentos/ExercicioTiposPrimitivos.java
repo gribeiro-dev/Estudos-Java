@@ -1,3 +1,5 @@
+package logica_fundamentos;
+
 public class ExercicioTiposPrimitivos {
     public static void main (String[] args) {
 
