@@ -26,9 +26,31 @@ O projeto está organizado por módulos para facilitar a navegação e o estudo 
 - **📅 Agenda Pessoal** — compromissos por dia e hora
 - **🚗 Estacionamento** — controle de vagas com pagamento
 
+- **POO/Exercicios:** Exercicios focados no aprendizado de conceitos de Programacao Orientada a Objetos na linguagem Java
+
+### Pela IDE (IntelliJ ou similar)
+
+1. Abra a pasta `Estudos-Java` como projeto.
+2. Navegue até `src/POO/Exercicios/<nome_do_exercicio>/test/` caso for de POO.
+
+  Se for em outro diretorio, navegue ate `src/<pasta_desejada/<projeto_escolhido>` para poder testar
+
+4. Clique com o botão direito no arquivo (ex: `testLivro01.java`) → **Run**.
+
 ## 🚀 Como executar os exercícios
 
-Para rodar qualquer um dos exercícios localmente, você precisa ter o JDK instalado. No terminal, use:
+### Pela IDE (IntelliJ ou similar)
+
+1. Abra a pasta `Estudos-Java` como projeto.
+2. Navegue até `src/POO/Exercicios/<nome_do_exercicio>/test/` caso for de POO.
+
+  Se for em outro diretorio, navegue ate `src/<pasta_desejada/<projeto_escolhido>` para poder testar
+
+4. Clique com o botão direito no arquivo (ex: `testLivro01.java`) → **Run**.
+
+### Terminal
+
+Se deseja executar o codigo no terminal, siga os passos abaixo
 
 ```python
 
